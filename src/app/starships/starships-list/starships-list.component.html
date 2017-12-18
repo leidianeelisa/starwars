@@ -1,1 +1,9 @@
-<h1 style="color: white"> Teste Starships</h1>
+<div class="panel">
+        
+                <div class="" *ngFor="let starship of starships ">
+                     <a [routerLink]="['/starships/']">
+                        <span class="">{{ starship.name}}</span>
+                     </a>
+                
+                </div>
+        </div>

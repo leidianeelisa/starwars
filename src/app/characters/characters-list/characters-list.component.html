@@ -1,3 +1,9 @@
+<div class="panel">
 
-        <div class="bloco">
-        </div>   
+        <div class="" *ngFor="let character of characters ">
+             <a [routerLink]="['/characters/', splitUrl(character.url) ]">
+                <span class="">{{ character.name}}</span>
+             </a>
+        
+        </div>
+</div>

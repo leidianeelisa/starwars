@@ -6,3 +6,4 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { CharactersListComponent } from './characters-list/characters-list.component';
+import { CharactersService } from './characters.service';

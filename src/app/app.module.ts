@@ -8,6 +8,8 @@ import { AppRoutingModule, routingComponents } from './app.routing';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 import { AboutComponent } from './about/about.component';
+import { CharactersService } from 'app/characters/characters.service';
+import { StarshipsService } from 'app/starships/starships.service';
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import { AboutComponent } from './about/about.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CharactersService, StarshipsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
