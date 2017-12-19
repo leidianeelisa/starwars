@@ -12,6 +12,7 @@ import { CharactersService } from 'app/characters/characters.service';
 import { StarshipsService } from 'app/starships/starships.service';
 import { CharacterDetailResolver } from 'app/characters/characters-detail/characters-detail.resolver';
 import { StarshipsDetailResolver } from 'app/starships/starships-detail/starships-detail.resolver';
+import { SpeciesService } from 'app/species/species.service';
 
 
 
@@ -31,7 +32,7 @@ import { StarshipsDetailResolver } from 'app/starships/starships-detail/starship
     HttpModule,
     AppRoutingModule
   ],
-  providers: [CharactersService, StarshipsService, CharacterDetailResolver, StarshipsDetailResolver],
+  providers: [CharactersService, StarshipsService, CharacterDetailResolver, StarshipsDetailResolver, SpeciesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

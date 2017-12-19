@@ -60,4 +60,6 @@ export class CharactersListComponent implements OnInit {
         }
       );
     }
+
+   
 }

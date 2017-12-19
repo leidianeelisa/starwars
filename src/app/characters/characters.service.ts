@@ -8,6 +8,7 @@ import { Characters } from 'app/characters/characters';
 @Injectable()
 export class CharactersService {
     private url = 'https://swapi.co/api/people/';
+    
 
   constructor(private http: Http) {}
 
@@ -38,5 +39,9 @@ export class CharactersService {
       .map(
         res => res.json()
       );
+  }
+
+  getSpecies(urlSpecie: string): Observable<any[]>{
+    return this.http.get(urlSpecie).map(res => res.json())
   }
 }
