@@ -18,5 +18,12 @@ export class StarshipsService {
             res => res.json()
           );
       }
+
+      getStarshipById(id: String): Observable<Starships> {
+        return this.http.get(this.url + id)
+          .map(
+            res => res.json()
+          );
+      }
     
 }

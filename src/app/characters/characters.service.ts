@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Http, Headers, Response } from '@angular/http';
+import { Characters } from 'app/characters/characters';
 
 
 @Injectable()
@@ -15,6 +16,13 @@ export class CharactersService {
       .map(
         res => res.json()
       );
+  }
+
+  getCharacterById(id: String): Observable<Characters>{
+    return this.http.get(this.url + id)
+    .map(
+      res=> res.json()
+    );
   }
 
 }

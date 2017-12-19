@@ -24,9 +24,13 @@ export class StarshipsListComponent {
         this.nextPage = starships['next'];
       },
       (error: any) => {
-        console.log('Falha no acesso ao service');
+        console.log('Error to acess the API');
       }
     );
+  }
+  private splitUrl(url: String) {
+    const value = url.replace('https://swapi.co/api/starships/', '').replace('/', '');
+    return value;
   }
     
 }

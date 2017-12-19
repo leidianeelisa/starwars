@@ -10,6 +10,9 @@ import { PageFooterComponent } from './page-footer/page-footer.component';
 import { AboutComponent } from './about/about.component';
 import { CharactersService } from 'app/characters/characters.service';
 import { StarshipsService } from 'app/starships/starships.service';
+import { CharacterDetailResolver } from 'app/characters/characters-detail/characters-detail.resolver';
+import { StarshipsDetailResolver } from 'app/starships/starships-detail/starships-detail.resolver';
+
 
 
 @NgModule({
@@ -27,7 +30,7 @@ import { StarshipsService } from 'app/starships/starships.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [CharactersService, StarshipsService],
+  providers: [CharactersService, StarshipsService, CharacterDetailResolver, StarshipsDetailResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

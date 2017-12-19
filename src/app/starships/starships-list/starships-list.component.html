@@ -1,8 +1,8 @@
 <div class="panel">
         
                 <div class="" *ngFor="let starship of starships ">
-                     <a [routerLink]="['/starships/']">
-                        <span class="">{{ starship.name}}</span>
+                     <a [routerLink]="['/starships/', splitUrl(starship.url)]">
+                        <span class="" style="color:black">{{ starship.name}}</span>
                      </a>
                 
                 </div>
