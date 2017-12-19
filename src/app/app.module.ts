@@ -15,13 +15,14 @@ import { StarshipsDetailResolver } from 'app/starships/starships-detail/starship
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     PageHeaderComponent,
     PageFooterComponent,
     AboutComponent,
-    routingComponents,
+    routingComponents
     
   ],
   imports: [

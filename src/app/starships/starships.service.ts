@@ -7,23 +7,31 @@ import { Starships } from 'app/starships/starships';
 @Injectable()
 export class StarshipsService {
 
-    private url = 'https://swapi.co/api/starships/';
+  private url = 'https://swapi.co/api/starships/';
 
-    constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
-    getStarships(): Observable<Starships[]> {
-      console.log('here');
-        return this.http.get(this.url)
-          .map(
-            res => res.json()
-          );
-      }
+  getStarships(): Observable<Starships[]> {
+    console.log('here');
+    return this.http.get(this.url)
+      .map(
+      res => res.json()
+      );
+  }
 
-      getStarshipById(id: String): Observable<Starships> {
-        return this.http.get(this.url + id)
-          .map(
-            res => res.json()
-          );
-      }
-    
+  getStarshipById(id: String): Observable<Starships> {
+    return this.http.get(this.url + id)
+      .map(
+      res => res.json()
+      );
+  }
+
+
+  getStarshipByPage(page: String): Observable<Starships[]> {
+    return this.http.get(page.toString())
+      .map(
+      res => res.json()
+      );
+  }
+
 }

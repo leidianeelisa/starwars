@@ -1,9 +1,28 @@
 <div class="panel">
         
+          <label for="filter">Filter</label>
+          <input id="filter" placeholder="Filter by name..." class="yellow" type="text" name="filter">
+        
+          <label for="orderBy">Order by</label>
+          <select name="order" class="yellow" id="orderBy" >
+            <option class="black" value="asc">ASC</option>
+            <option class="black" value="desc">DESC</option>
+        
+          </select>
+        
+        </div>
+<div class="panel">
+        
                 <div class="" *ngFor="let starship of starships ">
                      <a [routerLink]="['/starships/', splitUrl(starship.url)]">
                         <span class="" style="color:black">{{ starship.name}}</span>
                      </a>
                 
                 </div>
+
+                <div class="divider"></div>
+                <button *ngIf="nextPage != null" class="btn btn-yellow" (click)="getStarshipByPage(nextPage)">Next</button>
+                
+                <button *ngIf="backPage != null" class="btn btn-grey" (click)="getStarshipByPage(backPage)">Back</button>
+             
         </div>

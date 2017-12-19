@@ -9,6 +9,7 @@ export class CharactersListComponent implements OnInit {
 
     characters: Characters[];
     nextPage: String;
+    backPage: String;
 
     constructor( private service: CharactersService ) {}
 
@@ -32,5 +33,31 @@ export class CharactersListComponent implements OnInit {
     private splitUrl(url: String) {
       const value = url.replace('https://swapi.co/api/people/', '').replace('/', '');
       return value;
+    }
+
+    private getCharacterByFilter(name): void {
+      this.service.getCharacterByFilter(name).subscribe(
+        (characters) => {
+          this.characters = characters['results'];
+          this.backPage = characters['previous'];
+          this.nextPage = characters['next'];
+        },
+        (error: any) => {
+          console.log('Error to acess the API');
+        }
+      );
+    }
+
+    private getCharascterByPage(page): void {
+      this.service.getCharacterByPage(page).subscribe(
+        (characters) => {
+          this.characters = characters['results'];
+          this.backPage = characters['previous'];
+          this.nextPage = characters['next'];
+        },
+        (error: any) => {
+          console.log('Error to acess the API');
+        }
+      );
     }
 }

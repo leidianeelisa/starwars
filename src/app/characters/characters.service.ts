@@ -25,4 +25,18 @@ export class CharactersService {
     );
   }
 
+  getCharacterByFilter(name: String): Observable<Characters[]> {
+    return this.http.get(this.url + '?search=' + name)
+      .map(
+        res => res.json()
+      );
+  }
+
+  
+  getCharacterByPage(page: String): Observable<Characters[]> {
+    return this.http.get(page.toString())
+      .map(
+        res => res.json()
+      );
+  }
 }

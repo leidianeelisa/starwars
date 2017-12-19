@@ -1,9 +1,26 @@
 <div class="panel">
 
-        <div class="" *ngFor="let character of characters ">
-             <a [routerLink]="['/characters/', splitUrl(character.url) ]">
-                <span class="">{{ character.name}}</span>
-             </a>
-        
-        </div>
-</div> 
+  <label for="filter">Filter</label>
+  <input id="filter" placeholder="Filter by name..." class="yellow" type="text" name="filter">
+
+  <label for="orderBy">Order by</label>
+  <select name="order" class="yellow" id="orderBy" >
+    <option class="black" value="asc">ASC</option>
+    <option class="black" value="desc">DESC</option>
+
+  </select>
+
+</div>
+
+<div class="panel">
+  <div class="" *ngFor="let character of characters">
+    <a [routerLink]="['/characters/', splitUrl(character.url) ]">
+      <span class="">{{ character.name}}</span>
+    </a>
+
+  </div>
+  <div class="divider"></div>
+  <button *ngIf="nextPage != null" class="btn btn-yellow" (click)="getCharascterByPage(nextPage)">Next</button>
+  
+  <button *ngIf="backPage != null" class="btn btn-grey" (click)="getCharascterByPage(backPage)">Back</button>
+</div>

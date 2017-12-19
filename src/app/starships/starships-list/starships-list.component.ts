@@ -9,6 +9,7 @@ export class StarshipsListComponent {
 
   starships: Starships[];
   nextPage: String;
+  backPage: String;
 
   constructor(private service: StarshipsService) {}
 
@@ -28,9 +29,26 @@ export class StarshipsListComponent {
       }
     );
   }
+
+  private getStarshipByPage(page): void {
+    console.log(page);
+    this.service.getStarshipByPage(page).subscribe(
+      (starships) => {
+        this.starships = starships['results'];
+        this.backPage = starships['previous'];
+        this.nextPage = starships['next'];
+      },
+      (error: any) => {
+        console.log('Error to acess the API');
+      }
+    );
+  }
+
   private splitUrl(url: String) {
     const value = url.replace('https://swapi.co/api/starships/', '').replace('/', '');
     return value;
   }
+
+  
     
 }
