@@ -13,7 +13,7 @@ import { CharactersService } from 'app/characters/characters.service';
   export class CharactersDetailComponent implements OnInit  {
 
     character: Characters;
-    specie: Species;
+    species: Species[] = [];
     nextPage: String;
     private subscription: Subscription;
 
@@ -29,7 +29,7 @@ import { CharactersService } from 'app/characters/characters.service';
         this.subscription = this.route.data.subscribe(
           (data) => {
             this.character = data[0];
-           // this.character.species = this.getSpecies(this.character.species);
+            this.getSpecies();
           },
           (error: any) => {
             console.log(error);
@@ -37,21 +37,20 @@ import { CharactersService } from 'app/characters/characters.service';
         );
       }
 
-      private getSpecies(urlSpecie: string):any{
-        if (urlSpecie !== undefined) {
-          this.service.getSpeciesById(this.removeUrlSpecie(urlSpecie)).subscribe(
-            (specie) => {
-              console.log(specie);
-              this.specie = specie['results'];
-              this.nextPage = specie['next'];
-            },(error: any) => {
-              console.log('Error to acess the API');
-            }
-          );
+      private getSpecies(){
+        this.species = [];
+        if(this.character['species']  !== undefined ){
+          this.character['species'].forEach(urlSpecie => {
+             this.service.getSpeciesById(this.splitUrlSpecie(urlSpecie)).subscribe(
+               (specie) => {
+                 this.species.push(specie);
+               }
+             )
+          });
         }
       }
 
-      private removeUrlSpecie(url: String) {
+      private splitUrlSpecie(url: String) {
         const value = url.replace('https://swapi.co/api/species/', '').replace('/', '');
         return value;
       }

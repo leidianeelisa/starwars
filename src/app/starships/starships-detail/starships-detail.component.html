@@ -1,10 +1,14 @@
 
+    
+  <div class="panel title-name">
+      {{ starship.name }}
+  </div>
   <div class="panel">
     <div class="row">
       <div class="column">
         <div class="details">
-          <span class="detail"><strong>Name:</strong> {{ starship.name }}</span>
-          <span class="detail"><strong>model:</strong> {{ starship.model }}</span>
+          
+          <span class="detail"><strong>Model:</strong> {{ starship.model }}</span>
           <span class="detail"><strong>Manufacturer:</strong> {{ starship.manufacturer }}</span>
           <span class="detail"><strong>Cost in Credits:</strong> {{ starship.cost_in_credits }}</span>
           <span class="detail"><strong>Length:</strong> {{ starship.length }}</span>
@@ -16,7 +20,22 @@
           <span class="detail"><strong>Hyperdrive Rating:</strong> {{ starship.hyperdrive_rating }}</span>
           <span class="detail"><strong>MGLT:</strong> {{ starship.MGLT }}</span>
           <span class="detail"><strong>Starship Class:</strong> {{ starship.starship_class }}</span>
+         
+          
+
+        
         </div>
       </div>
     </div>
+
   </div>
+  
+  <div class="panel">
+      <span class="pilots">Pilots:</span>
+      <span  *ngFor="let pilot of characters">
+        <a class="pilots" [routerLink]="['/characters/' , splitUrlCharacter(pilot.url)]"> {{ pilot.name }}</a>
+        
+      </span>
+  </div>
+
+  

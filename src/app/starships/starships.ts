@@ -12,6 +12,7 @@ export class Starships {
     hyperdrive_rating: String;
     MGLT: String;
     starship_class: String;
+    pilots: any;
     created: String;
     edited: String;
     url: String;
