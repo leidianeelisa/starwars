@@ -1,10 +1,10 @@
 <div class="panel">
 
   <label for="filter">Filter</label>
-  <input id="filter" placeholder="Filter by name..." class="input" type="text" name="filter">
+  <input id="filter" placeholder="Filter by name..." class="input" type="text" name="filter" [(ngModel)]="filter">
 
   <label for="orderBy">Order by</label>
-  <select name="order" class="input" id="orderBy">
+  <select name="order" class="input" id="orderBy" [(ngModel)]="order">
     <option class="black" value="asc">ASC</option>
     <option class="black" value="desc">DESC</option>
 
@@ -13,7 +13,7 @@
 </div>
 <div class="panel">
 
-  <div class="" *ngFor="let starship of starships ">
+  <div class="" *ngFor="let starship of starships  | filterPipe: filter | orderBy: order">
     <a [routerLink]="['/starships/', splitUrl(starship.url)]">
       <div class="character">
         <span>{{ starship.name}}</span>
