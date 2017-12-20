@@ -10,7 +10,6 @@ export class CharactersListComponent implements OnInit {
     characters: Characters[];
     nextPage: String;
     backPage: String;
-    order:String;
 
     constructor( private service: CharactersService ) {}
 
