@@ -14,6 +14,7 @@ import { CharacterDetailResolver } from 'app/characters/characters-detail/charac
 import { StarshipsDetailResolver } from 'app/starships/starships-detail/starships-detail.resolver';
 import { SpeciesService } from 'app/species/species.service';
 import { OrderBy } from 'app/pipes/order-by.pipe';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -28,7 +29,8 @@ import { OrderBy } from 'app/pipes/order-by.pipe';
     PageFooterComponent,
     AboutComponent,
     routingComponents,
-    OrderBy
+    OrderBy,
+    FilterPipe
     
   ],
   imports: [

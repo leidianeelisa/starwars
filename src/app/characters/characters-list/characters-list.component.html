@@ -1,7 +1,7 @@
 <div class="panel">
 
   <label for="filter">Filter</label>
-  <input id="filter" placeholder="Filter by name..." class="input" type="text" name="filter">
+  <input id="filter" placeholder="Filter by name..." class="input" type="text" name="filter" [(ngModel)]="filter">
 
   <label for="orderBy">Order by</label>
   <select name="order" class="input" id="orderBy" [(ngModel)]="order">
@@ -13,7 +13,7 @@
 </div>
 
 <div class="panel">
-  <div class="" *ngFor="let character of characters">
+  <div class="" *ngFor="let character of characters | filterPipe: filter">
     <a [routerLink]="['/characters/', splitUrl(character.url) ]">
       <div class="character">
         <span>{{ character.name}}</span>
