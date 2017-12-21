@@ -11,7 +11,7 @@ import { StarshipsDetailResolver } from 'app/starships/starships-detail/starship
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full'},
+  { path: '', redirectTo: 'characters', pathMatch: 'full'},
   { path: 'characters', component: CharactersListComponent},
   { path: 'characters/:id', component: CharactersDetailComponent, resolve: [CharacterDetailResolver] },
   { path: 'about',component: AboutComponent},
