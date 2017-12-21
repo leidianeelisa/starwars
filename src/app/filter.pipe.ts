@@ -7,12 +7,13 @@ import { Pipe, PipeTransform, Injectable } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(characters: any, filter: any): any {
-    if(filter === undefined || filter === ''){
-      return characters;
-    }else{
-      return characters.filter(character => character.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
-    }
-   
-  }
 
+    if (filter === undefined || filter === '') {
+      return characters;
+    } else {
+      return characters.filter(
+        character => character.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1
+      );
+    }
+  }
 }

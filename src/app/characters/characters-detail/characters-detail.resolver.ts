@@ -6,9 +6,9 @@ import { CharactersService } from 'app/characters/characters.service';
 
 @Injectable()
 export class CharacterDetailResolver implements Resolve<Characters> {
-    
 
-    constructor(private service: CharactersService) {}
+
+    constructor(private service: CharactersService) { }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> {
         const id = route.params['id'];

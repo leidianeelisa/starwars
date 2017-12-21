@@ -38,7 +38,6 @@ export class StarshipsDetailComponent implements OnInit {
   }
 
   private getPilots() {
-
     this.characters = [];
     if (this.starship['pilots'] !== undefined && this.starship.pilots.length !== 0) {
       this.starship['pilots'].forEach(
@@ -57,12 +56,9 @@ export class StarshipsDetailComponent implements OnInit {
     }
   }
 
-
   private splitUrlCharacter(url: String) {
     const value = url.replace('https://swapi.co/api/people/', '').replace('/', '');
     return value;
   }
-
-
 
 }

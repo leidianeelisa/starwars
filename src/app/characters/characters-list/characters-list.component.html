@@ -5,15 +5,14 @@
 
   <label for="orderBy">Order by</label>
   <select name="order" class="input" id="orderBy" [(ngModel)]="order">
-    <option class="black"  value="asc">ASC</option>
+    <option class="black" value="asc">ASC</option>
     <option class="black" value="desc">DESC</option>
-
   </select>
 
 </div>
 
 <div class="panel">
-  <div class="" *ngFor="let character of characters | filterPipe: filter | orderBy: order" >
+  <div class="" *ngFor="let character of characters | filterPipe: filter | orderBy: order">
     <a [routerLink]="['/characters/', splitUrl(character.url) ]">
       <div class="character">
         <span>{{ character.name}}</span>

@@ -7,7 +7,7 @@ import { StarshipsService } from 'app/starships/starships.service';
 @Injectable()
 export class StarshipsDetailResolver implements Resolve<Starships> {
 
-    constructor(private service: StarshipsService) {}
+    constructor(private service: StarshipsService) { }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> {
         const id = route.params['id'];

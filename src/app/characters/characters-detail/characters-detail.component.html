@@ -1,23 +1,29 @@
+<div class="panel title-name">
+    {{ character.name }}
+</div>
 
-        <div class="panel title-name">
-            {{ character.name }}
-        </div>
-        <div class="panel">
+<div class="panel">
+    <div>
+        <span class="detail">
+            <strong>Gender: </strong>{{ character.gender }} </span>
+        <span class="detail">
+            <strong>Birth Year:</strong> {{ character.birth_year }}</span>
+        <span class="detail">
+            <strong>Height:</strong>{{ character.height }}</span>
+        <span class="detail">
+            <strong>Mass:</strong> {{ character.mass }} </span>
+        <span class="detail">
+            <strong>Hair Color:</strong> {{ character.hair_color }} </span>
+        <span class="detail">
+            <strong>Skin Color:</strong> {{ character.skin_color }} </span>
+        <span class="detail">
+            <strong>Eye Color:</strong> {{ character.eye_color }}</span>
+    </div>
+</div>
 
-              <div >
-                <span class="detail"><strong>Gender: </strong>{{ character.gender }} </span>
-                <span class="detail"><strong>Birth Year:</strong> {{ character.birth_year }}</span>
-                <span class="detail"><strong>Height:</strong>{{ character.height }}</span>
-                <span class="detail"><strong>Mass:</strong> {{ character.mass }} </span>
-                <span class="detail"><strong>Hair Color:</strong> {{ character.hair_color }} </span>
-                <span class="detail"><strong>Skin Color:</strong> {{ character.skin_color }} </span>
-                <span class="detail"><strong>Eye Color:</strong>  {{ character.eye_color }}</span>
-              </div>
-        </div>
-
-        <div class="panel">
-            <span class="title-name">Specie:</span>
-            <span  *ngFor="let specie of species">
-                <span class="pilots"> {{ specie.name }}</span>
-              </span>
-        </div> 
+<div class="panel">
+    <span class="title-name">Specie:</span>
+    <span *ngFor="let specie of species">
+        <span class="pilots"> {{ specie.name }}</span>
+    </span>
+</div>

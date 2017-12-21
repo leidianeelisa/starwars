@@ -1,17 +1,19 @@
-import {Component}from '@angular/core'; 
+import { Component } from '@angular/core';
 import { Starships } from 'app/starships/starships';
 import { StarshipsService } from 'app/starships/starships.service';
-@Component ({ 
-  selector: 'app-starships-list', 
+
+@Component({
+  selector: 'app-starships-list',
   templateUrl: 'starships-list.component.html'
-}) 
+})
+
 export class StarshipsListComponent {
 
   starships: Starships[];
   nextPage: String;
   backPage: String;
 
-  constructor(private service: StarshipsService) {}
+  constructor(private service: StarshipsService) { }
 
   ngOnInit() {
     this.getStarships();
@@ -49,6 +51,4 @@ export class StarshipsListComponent {
     return value;
   }
 
-  
-    
 }

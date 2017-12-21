@@ -7,10 +7,10 @@
   <select name="order" class="input" id="orderBy" [(ngModel)]="order">
     <option class="black" value="asc">ASC</option>
     <option class="black" value="desc">DESC</option>
-
   </select>
 
 </div>
+
 <div class="panel">
 
   <div class="" *ngFor="let starship of starships  | filterPipe: filter | orderBy: order">
@@ -19,11 +19,10 @@
         <span>{{ starship.name}}</span>
       </div>
     </a>
-
   </div>
-  
 
   <div class="space"></div>
   <button *ngIf="backPage != null" class="btn btn-grey" (click)="getStarshipByPage(backPage)">Back</button>
   <button *ngIf="nextPage != null" class="btn btn-yellow" (click)="getStarshipByPage(nextPage)">Next</button>
+
 </div>

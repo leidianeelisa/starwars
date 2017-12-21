@@ -7,41 +7,30 @@ import { Characters } from 'app/characters/characters';
 
 @Injectable()
 export class CharactersService {
-    private url = 'https://swapi.co/api/people/';
-    
+  private url = 'https://swapi.co/api/people/';
 
-  constructor(private http: Http) {}
+
+  constructor(private http: Http) { }
 
   getCharacters(): Observable<any[]> {
     return this.http.get(this.url)
       .map(
-        res => res.json()
+      res => res.json()
       );
   }
 
-  getCharacterById(id: String): Observable<Characters>{
+  getCharacterById(id: String): Observable<Characters> {
     return this.http.get(this.url + id)
-    .map(
-      res=> res.json()
-    );
-  }
-
-  getCharacterByFilter(name: String): Observable<Characters[]> {
-    return this.http.get(this.url + '?search=' + name)
       .map(
-        res => res.json()
+      res => res.json()
       );
   }
 
-  
   getCharacterByPage(page: String): Observable<Characters[]> {
     return this.http.get(page.toString())
       .map(
-        res => res.json()
+      res => res.json()
       );
   }
 
-  getSpecies(urlSpecie: string): Observable<any[]>{
-    return this.http.get(urlSpecie).map(res => res.json())
-  }
 }

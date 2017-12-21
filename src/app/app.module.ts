@@ -13,16 +13,13 @@ import { StarshipsService } from 'app/starships/starships.service';
 import { CharacterDetailResolver } from 'app/characters/characters-detail/characters-detail.resolver';
 import { StarshipsDetailResolver } from 'app/starships/starships-detail/starships-detail.resolver';
 import { SpeciesService } from 'app/species/species.service';
-import { OrderBy } from 'app/pipes/order-by.pipe';
 import { FilterPipe } from './filter.pipe';
 import { OrderByPipe } from './order-by.pipe';
 
 
-
-
 @NgModule({
-  exports:[
-    OrderBy
+  exports: [
+
   ],
   declarations: [
     AppComponent,
@@ -30,10 +27,9 @@ import { OrderByPipe } from './order-by.pipe';
     PageFooterComponent,
     AboutComponent,
     routingComponents,
-    OrderBy,
     FilterPipe,
     OrderByPipe
-    
+
   ],
   imports: [
     BrowserModule,
@@ -41,8 +37,9 @@ import { OrderByPipe } from './order-by.pipe';
     HttpModule,
     AppRoutingModule
   ],
-  
-  providers: [CharactersService, StarshipsService, CharacterDetailResolver, StarshipsDetailResolver, SpeciesService, OrderBy],
+
+  providers: [CharactersService, StarshipsService, CharacterDetailResolver, StarshipsDetailResolver, SpeciesService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

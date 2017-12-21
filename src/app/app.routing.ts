@@ -11,12 +11,12 @@ import { StarshipsDetailResolver } from 'app/starships/starships-detail/starship
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'characters', pathMatch: 'full'},
-  { path: 'characters', component: CharactersListComponent},
+  { path: '', redirectTo: 'characters', pathMatch: 'full' },
+  { path: 'characters', component: CharactersListComponent },
   { path: 'characters/:id', component: CharactersDetailComponent, resolve: [CharacterDetailResolver] },
-  { path: 'about',component: AboutComponent},
-  { path: 'starships', component: StarshipsListComponent},
-  { path: 'starships/:id', component: StarshipsDetailComponent, resolve: [StarshipsDetailResolver]}
+  { path: 'about', component: AboutComponent },
+  { path: 'starships', component: StarshipsListComponent },
+  { path: 'starships/:id', component: StarshipsDetailComponent, resolve: [StarshipsDetailResolver] }
 
 ];
 
