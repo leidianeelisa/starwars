@@ -6,6 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class OrderByPipe implements PipeTransform {
 
   transform(characters: any, order: any): any {
+    if (characters !== undefined && order === undefined || order === ''){
+      order = 'asc';
+      
+    }
     if (order !== undefined) {
       if (order === 'asc') {
         return characters.sort(
