@@ -16,3 +16,6 @@ You must have installed on your computer:
 - In a browser, enter the address indicated in the terminal (usually https: // localhost: 4200);
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Developed by:
+Leidiane Elisa Cunha
